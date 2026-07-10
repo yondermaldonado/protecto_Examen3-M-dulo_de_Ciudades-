@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pepe El Boletón | Tus Entradas Oficiales</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Pepe<span>ElBoletón</span></div>
+        <nav>
+            <a href="#" class="active">Inicio</a>
+            <a href="admin.html">Administración</a>
+            <a id="ver-carrito" style="position:relative;">🛒 Carrito (<span id="cart-count">0</span>)</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Tus Boletos Oficiales al Instante</h1>
+        <p>Asegura tu entrada para los mejores eventos de manera rápida y segura.</p>
+    </section>
+
+    <main class="container">
+        <div class="filtros-container">
+            <input type="text" id="search-input" placeholder="Buscar evento por nombre...">
+            <select id="filter-ciudad">
+                <option value="">Todas las ciudades</option>
+                <option value="Barranquilla">Barranquilla</option>
+                <option value="Bogotá">Bogotá</option>
+                <option value="Bucaramanga">Bucaramanga</option>
+                <option value="Medellín">Medellín</option>
+                <option value="Cúcuta">Cúcuta</option>
+            </select>
+            <select id="filter-categoria">
+                <option value="">Todas las categorías</option>
+            </select>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 40px;">Próximos Eventos</h2>
+        <div class="grid-eventos" id="eventos-container"></div>
+    </main>
+
+    <div id="modal-detalle" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close-modal" id="close-detalle">&times;</span>
+            <div id="detalle-content"></div>
+        </div>
+    </div>
+
+    <div id="modal-carrito" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-carrito">&times;</span>
+            <h3>Tu Carrito</h3>
+            <div id="carrito-items" style="margin:20px 0;"></div>
+            <div style="font-weight: bold; font-size: 18px; margin-bottom: 20px;">Total: <span id="carrito-total">$0</span></div>
+            
+            <form id="form-compra" style="border-top: 1px solid #eee; padding-top: 15px;">
+                <h4>Datos del Comprador</h4>
+                <div class="form-group"><input type="number" id="cli-id" placeholder="Documento Identidad" required></div>
+                <div class="form-group"><input type="text" id="cli-nombre" placeholder="Nombre Completo" required></div>
+                <div class="form-group"><input type="text" id="cli-direccion" placeholder="Dirección" required></div>
+                <div class="form-group"><input type="number" id="cli-telefono" placeholder="Teléfono" required></div>
+                <div class="form-group"><input type="email" id="cli-email" placeholder="E-mail" required></div>
+                <button type="submit" class="btn btn-primary" style="width:100%;">Finalizar Compra</button>
+            </form>
+        </div>
+    </div>
+    <div id="toast" class="toast"></div>
+    <script src="js/data-seed.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
