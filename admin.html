@@ -34,6 +34,7 @@
                 <a data-target="mod-categorias">Categorías</a>
                 <a data-target="mod-eventos">Eventos</a>
                 <a data-target="mod-ventas">Ventas</a>
+                <a data-target="mod-ciudades">Ciudades</a>
                 <a id="btn-logout" style="color:var(--primary-color)">Salir</a>
             </nav>
         </header>
@@ -75,6 +76,40 @@
                 </table>
             </section>
 
+            <section id="mod-ciudades" class="admin-section" style="display:none;">
+
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+
+                    <h2>Módulo Ciudades</h2>
+
+                    <button class="btn btn-primary" id="btn-add-city">
+
+                        Agregar Ciudad
+
+                    </button>
+
+                </div>
+
+                <table id="table-cities">
+
+                    <thead>
+
+                        <tr>
+                            <th>Código</th>
+                            <th>Nombre</th>
+                            <th>Acciones</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
             <section id="mod-eventos" class="admin-section" style="display:none;">
                 <div style="display:flex; justify-content:space-between; align-items:center;">
                     <h2>Módulo Eventos</h2>
@@ -109,6 +144,7 @@
                     <tbody></tbody>
                 </table>
             </section>
+
         </main>
     </div>
 
@@ -124,6 +160,54 @@
             </form>
         </div>
     </div>
+
+    <div id="modal-city" class="modal">
+
+        <div class="modal-content">
+    
+            <span class="close-modal close-generic">&times;</span>
+    
+            <h3>Nueva Ciudad</h3>
+    
+            <form id="form-city">
+    
+                <input
+                    type="hidden"
+                    id="city-id">
+    
+                <div class="form-group">
+    
+                    <label>Código</label>
+    
+                    <input
+                        id="city-code"
+                        required>
+    
+                </div>
+    
+                <div class="form-group">
+    
+                    <label>Nombre</label>
+    
+                    <input
+                        id="city-name"
+                        required>
+    
+                </div>
+    
+                <button
+                    class="btn btn-primary">
+    
+                    Guardar
+    
+                </button>
+    
+            </form>
+    
+        </div>
+    
+    </div>
+
 
     <div id="modal-ev" class="modal">
         <div class="modal-content">

@@ -36,6 +36,16 @@ const StorageManager = {
             );
         }
 
+        // Ciudades
+        if (!localStorage.getItem("cities")) {
+
+            localStorage.setItem(
+                "cities",
+                JSON.stringify([])
+            );
+        
+        }
+
     },
 
     get(key) {
